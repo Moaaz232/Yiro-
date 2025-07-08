@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yiro Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- شريط علوي -->
+  <header class="navbar">
+   <div id="loader">
+  <div class="spinner"></div>
+</div>
+
+    <div class="logo">
+  <img src="logo.png" alt="" class="logo-img" />
+  <span class="brand-name">Yiro Store</span>
+</div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">تعريف</a>
+      <a href="#products">المنتجات</a>
+      <a href="#order">الطلب</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="toggle-theme" id="themeToggle" title="تبديل الوضع">
+      <span id="themeIcon">☀</span>
+    </div>
+  </header>
+
+  <!-- تعريف المتجر -->
+  <section id="about" class="section" data-aos="fade-up">
+    <br><br><h1>مرحبًا بك في <span class="brand-name">Yiro Store</span></h1>
+    <p>نقدم منتجات فاخرة بجودة عالية وتجربة تسوق متميزة.</p>
+  </section>
+
+  <!-- المنتجات -->
+  <section id="products" class="section">
+    <h2>منتجاتنا</h2>
+    <div class="product-list" id="productList"></div>
+  </section>
+
+  <!-- الطلب -->
+  <section id="order" class="section" data-aos="fade-left">
+    <h2>اطلب الآن</h2>
+    <form id="orderForm" class="order-form">
+  <input type="text" id="name" placeholder="اسمك" required />
+  <input type="tel" id="phone" placeholder="رقم الهاتف" required />
+  <input type="text" id="product" placeholder="المنتج المطلوب" required />
+  <textarea id="notes" placeholder="ملاحظات إضافية"></textarea>
+  <button type="submit">إرسال الطلب</button>
+</form>
+  </section>
+
+  <!-- تواصل -->
+  <section id="contact" class="section">
+    <h2>تابعنا</h2>
+    <div class="social-links" data-aos="fade-up">
+     <a href="https://www.facebook.com/profile.php?id=61577775072466" target="_blank">فيسبوك</a>
+<a href="https://www.instagram.com/yiro_store.of" target="_blank">إنستجرام</a>
+<a href="https://wa.me/994404219034" target="_blank">واتساب</a>
+<a href="https://t.me/yirostore" target="_blank">تيليجرام</a>
+<a href="https://www.tiktok.com/@yiro_store" target="_blank">تيك توك</a>
+
+    </div>
+  </section>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+<script src="script.js"></script>
+</body>
+</html>

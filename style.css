@@ -1,0 +1,442 @@
+/* style.css */
+
+:root {
+  --primary-color: #fff;
+  --text-color: #111;
+  --accent-color: #f1c40f;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --dark-bg: #121212;
+  --dark-text: #eee;
+  --dark-accent: #3498db;
+   --brand-color: #0066cc; /* اللون في الوضع العادي */
+}
+
+body.dark-mode {
+  --brand-color: #66ccff; /* اللون في الوضع الليلي */
+}
+
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  transition: all 0.5s ease;
+  scroll-behavior: smooth;
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 20px;
+  right: 50%;
+  transform: translateX(50%);
+  background: var(--primary-color);
+  box-shadow: 0 0 20px var(--shadow);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  gap: 20px;
+  z-index: 1000;
+  width: calc(100% - 40px);
+  max-width: 900px;
+  transition: all 1s ease;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 1s;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Burger Menu */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Toggle Theme */
+.toggle-theme {
+  background: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.toggle-theme:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 0 25px var(--accent-color);
+}
+
+/* Products */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.product {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: all 0.4s ease;
+  transform: translateY(0);
+}
+
+.product:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.product p {
+  font-size: 14px;
+  color: #555;
+}
+
+.product span {
+  display: block;
+  margin-top: 10px;
+  color: #007b00;
+  font-weight: bold;
+}
+
+/* Form */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: auto;
+  padding: 10px;
+}
+
+.order-form input,
+.order-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.order-form button {
+  padding: 12px;
+  background: var(--text-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.order-form button:hover {
+  background: #333;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.social-links a {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: #3b5998;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+.social-links a:nth-child(1) { background: #021017; }
+.social-links a:nth-child(2) { background: #160407; }
+.social-links a:nth-child(3) { background: #031209; }
+.social-links a:nth-child(4) { background: #021017; }
+.social-links a:nth-child(5) { background: #000000; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px var(--shadow);
+    width: 200px;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar .logo {
+    font-size: 16px;
+  }
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --primary-color: var(--dark-bg);
+  --text-color: var(--dark-text);
+  --accent-color: var(--dark-accent);
+  --shadow: rgba(255, 255, 255, 0.1);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+body.dark-mode .product {
+  background: #1e1e1e;
+  box-shadow: 0 0 500px rgba(0,255,255,0.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid var(--accent-color);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 25px var(--accent-color);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.product {
+  background: linear-gradient(135deg, #f9f9f9, #ffffff);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: all 0.4s ease;
+  transform: translateY(0);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #e0e0e0;
+}
+
+.product:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.product::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.product:hover::after {
+  opacity: 1;
+}
+
+/* style.css */
+
+/* ... باقي التنسيقات كما هي ... */
+
+/* Scroll Animations - AOS */
+[data-aos] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+/* تحسين التأثيرات عند التمرير */
+.product[data-aos], .section[data-aos] {
+  will-change: transform, opacity;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
+}
+/* style.css */
+
+/* ... باقي التنسيقات كما هي ... */
+
+/* Scroll Animations - AOS */
+[data-aos] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+/* تحسين التأثيرات عند التمرير */
+.product[data-aos], .section[data-aos] {
+  will-change: transform, opacity;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
+} 
+body {
+  font-family: 'El Messiri', sans-serif;
+  /* باقي التنسيقات */
+}
+.brand-name {
+  color: var(--brand-color);
+  transition: color 0.3s ease;
+}
+:root {
+  --brand-color: #0066cc; /* أزرق ملكي في الوضع العادي */
+  --brand-glow: 0 0 8px rgba(0, 102, 204, 0.6);
+}
+
+body.dark-mode {
+  --brand-color: #ffcc00; /* ذهبي في الوضع الليلي */
+  --brand-glow: 0 0 10px rgba(255, 204, 0, 0.8);
+}
+
+.brand-name {
+  color: var(--brand-color);
+  text-shadow: var(--brand-glow);
+  font-weight: 700;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 35px;
+  width: auto;
+}
+
+.brand-name {
+  color: var(--brand-color);
+  font-weight: 700;
+  text-shadow: var(--brand-glow);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+.logo-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;            /* يخلي الصورة دايرة */
+  object-fit: cover;             /* يظبط المحتوى جوه الدائرة */
+  border: 2px solid var(--brand-color);  /* لون الحد حسب الوضع */
+  box-shadow: 0 0 6px var(--brand-color); /* لمعة خارجية خفيفة */
+  transition: all 0.3s ease;
+}
